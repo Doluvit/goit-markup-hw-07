@@ -147,10 +147,12 @@ body {
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 999;
-		width: 100%;
-		height: 100%;
-		max-height: 796px;
+		z-index: 1001;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		width: 100vw;
+		height: 100vh;
 		padding-top: 80px;
 		padding-left: 40px;
 		padding-bottom: 40px;
@@ -176,28 +178,33 @@ body {
 		text-transform: capitalize;
 		color: var(--dark-color);
 	}
+	.header-mobile-link-contacts {
+		color: var(--pressed-state-color);
+	}
 	.header-mobile-link:hover,
 	.header-mobile-link:focus {
 		color: var(--pressed-state-color);
 	}
-	.header-mobile-list {
-		margin-bottom: 284px;
-	}
 	.header-mobile-item:not(:last-child) {
 		margin-bottom: 40px;
 	}
+	header-mobile-contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
 	.header-mobile-phone {
 		display: block;
-		margin-bottom: 40px;
+		/* margin-bottom: 0px; */
 		font-weight: 600;
 		font-size: 36px;
 		line-height: 1.11;
 		text-transform: capitalize;
-		color: var(--text-color);
+		color: var(--primary-brand-color);
 	}
 	.header-mobile-mail {
 		display: block;
-		margin-bottom: 48px;
+		/* margin-bottom: px; */
 		font-weight: 500;
 		font-size: 20px;
 		line-height: 1.2;
@@ -238,7 +245,7 @@ body {
 		fill: currentColor;
 	}
 }
-@media screen and (max-width: 438px) {
+@media screen and (max-width: 427px) {
 	.header-mobile-phone {
 		font-size: 20px;
 	}
@@ -344,7 +351,8 @@ body {
 /* ----------------------------------Main Page--------------------------------------- */
 
 /* ----------------------------------Hero-mobile-------------------------------- */
-@media screen and (max-width: 767px) {
+
+@media screen and (min-width: 320px) {
 	.hero {
 		margin: 0 auto;
 		padding-top: 112px;
@@ -358,12 +366,11 @@ body {
 		background-repeat: no-repeat;
 	}
 	.hero-title {
-		width: 318px;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 72px;
 		font-weight: 700;
-		font-size: 36px;
+		font-size: 30px;
 		line-height: 1.11;
 		text-align: center;
 		letter-spacing: 0.02em;
@@ -400,6 +407,12 @@ body {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	}
 }
+@media screen and (min-width: 480px) {
+	.hero-title {
+		width: 318px;
+		font-size: 36px;
+	}
+}
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
 	.hero {
 		background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -421,7 +434,7 @@ body {
 		background-repeat: no-repeat;
 	}
 	.hero-title {
-		width: 494px;
+		width: 492px;
 		margin-bottom: 40px;
 		margin-left: auto;
 		margin-right: auto;
@@ -1230,9 +1243,6 @@ body {
 		letter-spacing: 0.02em;
 		color: var(--accent-text-color);
 	}
-	.footer-lable-form {
-		width: 396px;
-	}
 	.footer-lable-input {
 		display: block;
 
@@ -1280,12 +1290,13 @@ body {
 		background-color: var(--dark-color);
 		padding-top: 96px;
 		padding-bottom: 96px;
-		padding-left: 108px;
-		padding-right: 164px;
 	}
 	.footer > .container {
 		display: flex;
 		flex-wrap: wrap;
+	}
+	.footer-descript {
+		margin-left: 108px;
 	}
 	.footer .logo {
 		font-family: "Raleway", sans-serif;
@@ -1345,6 +1356,7 @@ body {
 		fill: currentColor;
 	}
 	.footer-lable {
+		margin-left: 108px;
 		margin-top: 72px;
 	}
 	.footer-lable-text {
@@ -1404,6 +1416,9 @@ body {
 	.footer > .container {
 		flex-wrap: nowrap;
 	}
+	.footer-descript {
+		margin-left: 0;
+	}
 	.footer-social {
 		margin-left: 120px;
 	}
@@ -1441,8 +1456,13 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 408px;
-	min-height: 576px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	max-width: 408px;
+	max-height: 586px;
 	transform: translate(-50%, -50%);
 
 	padding-top: 72px;
